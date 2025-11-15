@@ -26,23 +26,24 @@ export default function Pagination({
 	}
 
 	return (
-		<nav className="flex justify-center mx-6">
-			<ul className="flex items-center space-x-2 bg-gray-600 rounded-full px-2 py-1">
+		<nav className="flex justify-center my-6 sm:my-8 md:my-10 mx-2 sm:mx-4 md:mx-6 px-3 sm:px-4">
+			<ul className="flex items-center flex-wrap justify-center gap-1 sm:gap-2 md:gap-3 bg-linear-to-r from-gray-700 to-gray-800 dark:from-gray-800 dark:to-gray-900 rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg">
 				{/* First Page */}
 				<li>
 					<Link href={`${BASE_URL}/?page=1`}>
 						<div
-							className={`rounded-l-full rounded-r-sm px-2 py-1 ${
+							className={`rounded-l-full rounded-r-sm px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === 1
-									? "opacity-50 pointer-events-none"
-									: "hover:bg-gray-500"
+									? "opacity-40 cursor-not-allowed"
+									: "hover:bg-gray-500 dark:hover:bg-gray-600 cursor-pointer"
 							}`}
 						>
 							<Image
 								src={"/icons/arrow-left-double.svg"}
 								alt="starting"
-								width={17}
-								height={17}
+								width={24}
+								height={24}
+								className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
 							/>
 						</div>
 					</Link>
@@ -56,17 +57,18 @@ export default function Pagination({
 						)}`}
 					>
 						<div
-							className={`rounded ${
+							className={`rounded px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === 1
-									? "opacity-50 pointer-events-none"
-									: "hover:bg-gray-500"
-							} px-2 py-1`}
+									? "opacity-40 cursor-not-allowed"
+									: "hover:bg-gray-500 dark:hover:bg-gray-600 cursor-pointer"
+							}`}
 						>
 							<Image
 								src={"/icons/arrow-left.svg"}
 								alt="previous"
-								width={17}
-								height={17}
+								width={24}
+								height={24}
+								className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
 							/>
 						</div>
 					</Link>
@@ -76,10 +78,10 @@ export default function Pagination({
 					<li key={num}>
 						<Link href={`${BASE_URL}/?page=${num}`}>
 							<div
-								className={`px-3 py-1 rounded transition ${
+								className={`px-2.5 sm:px-3.5 md:px-4 py-1 sm:py-2 rounded transition-smooth font-semibold text-sm sm:text-base ${
 									currentPage === num
-										? "bg-white text-gray-900 font-semibold"
-										: "text-white hover:bg-gray-500"
+										? "bg-yellow-400 dark:bg-yellow-500 text-gray-900 shadow-md"
+										: "text-white hover:bg-gray-500 dark:hover:bg-gray-600"
 								}`}
 							>
 								{num}
@@ -96,17 +98,18 @@ export default function Pagination({
 						)}`}
 					>
 						<div
-							className={`rounded ${
+							className={`rounded px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === totalPages
-									? "opacity-50 pointer-events-none"
-									: "hover:bg-gray-500"
-							} px-2 py-1`}
+									? "opacity-40 cursor-not-allowed"
+									: "hover:bg-gray-500 dark:hover:bg-gray-600 cursor-pointer"
+							}`}
 						>
 							<Image
 								src={"/icons/arrow-right.svg"}
 								alt="next"
-								width={17}
-								height={17}
+								width={24}
+								height={24}
+								className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
 							/>
 						</div>
 					</Link>
@@ -115,17 +118,18 @@ export default function Pagination({
 				<li>
 					<Link href={`${BASE_URL}/?page=${totalPages}`}>
 						<div
-							className={`rounded-r-full rounded-l-sm px-2 py-1 ${
+							className={`rounded-r-full rounded-l-sm px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === totalPages
-									? "opacity-50 pointer-events-none"
-									: "hover:bg-gray-500"
+									? "opacity-40 cursor-not-allowed"
+									: "hover:bg-gray-500 dark:hover:bg-gray-600 cursor-pointer"
 							}`}
 						>
 							<Image
 								src={"/icons/arrow-right-double.svg"}
 								alt="ending"
-								width={17}
-								height={17}
+								width={24}
+								height={24}
+								className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
 							/>
 						</div>
 					</Link>

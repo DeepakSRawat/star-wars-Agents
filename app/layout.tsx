@@ -11,7 +11,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-	title: "Star wars Directory",
+	title: "Star wars Agents",
 	description: "star wars all characters details",
 };
 

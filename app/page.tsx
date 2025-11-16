@@ -4,6 +4,7 @@ import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import { SWAPI_BASE_URL } from "@/lib/constants";
 import { notFound } from "next/navigation";
+import NotFound from "./(no-header)/not-found";
 
 export default async function Home({
 	searchParams,
@@ -21,12 +22,13 @@ export default async function Home({
 		} else {
 			request = await fetch(`${SWAPI_BASE_URL}/people/?page=${page}`);
 		}
-		if (request.status == 404) return notFound();
+		if (request.status == 404) return <NotFound />;
 	} catch (error) {
-		return notFound();
+		return <NotFound />;
 	}
 
 	const { results, count } = await request.json();
+	if (!results.length) return <NotFound />;
 	// const temp = await request.json();
 	// console.log("results and count:", temp);
 

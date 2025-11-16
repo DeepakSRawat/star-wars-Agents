@@ -16,7 +16,7 @@ const Search = () => {
 	};
 
 	return (
-		<div className="flex justify-center items-center my-4 border rounded-2xl border-yellow-400 py-1 gap-2 w-full max-w-md">
+		<div className="flex justify-center items-center my-4 border rounded-2xl border-yellow-400 py-1 gap-2 w-full max-w-md backdrop-blur-sm">
 			<Link href={`/?search=${value}`}>
 				<Image
 					src={"/icons/search.svg"}

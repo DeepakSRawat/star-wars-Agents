@@ -3,7 +3,6 @@
 import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import { SWAPI_BASE_URL } from "@/lib/constants";
-import { notFound } from "next/navigation";
 import NotFound from "./(no-header)/not-found";
 
 export default async function Home({
@@ -33,7 +32,8 @@ export default async function Home({
 	// console.log("results and count:", temp);
 
 	return (
-		<div className="min-h-screen flex flex-col items-center py-8 sm:py-12 md:py-16 bg-linear-to-b from-[#0a0a0a] to-slate-900">
+		// <div className="min-h-screen flex flex-col items-center py-8 sm:py-12 md:py-16 bg-linear-to-b from-[#0a0a0a] to-slate-900">
+		<div>
 			<div className="responsive-container mb-12">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
 					{results &&

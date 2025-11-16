@@ -22,7 +22,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${orbitron.variable} font-orbitron`}>
+			<body
+				className={`${orbitron.variable} font-orbitron h-screen bg-cover bg-center text-yellow-400`}
+				style={{
+					backgroundImage: "url('image/starwars-background.jpg')",
+				}}
+			>
 				<Header />
 				{children}
 			</body>

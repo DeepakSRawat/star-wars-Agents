@@ -1,3 +1,4 @@
+import ImageCard from "@/components/ImageCard";
 import { PICSUM_BASE_URL, SWAPI_BASE_URL } from "@/lib/constants";
 import { stringToColor } from "@/lib/utils";
 import Image from "next/image";
@@ -16,10 +17,15 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 	const month = dateFormatter.getMonth();
 	const year = dateFormatter.getFullYear();
 
+	const gradientStyle = {
+		height: "100vh", // Full screen height
+		background: `linear-gradient(to bottom, #0a0a0a, ${bgcolor})`, // Top → Bottom
+	};
+
 	return (
 		<div
 			className="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8"
-			style={{ background: bgcolor }}
+			style={gradientStyle}
 		>
 			{/* Header */}
 			<div className="w-full max-w-4xl mb-12">
@@ -33,13 +39,20 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 				{/* Character Image */}
 				<div className="md:col-span-1 flex justify-center">
 					<div className="rounded-2xl shadow-2xl overflow-hidden">
-						<Image
+						<ImageCard
 							width={300}
 							height={300}
 							className="w-full h-auto"
 							src={`${PICSUM_BASE_URL}/seed/${data.name}/300`}
 							alt={data.name}
 						/>
+						{/* <Image
+							width={300}
+							height={300}
+							className="w-full h-auto"
+							src={`${PICSUM_BASE_URL}/seed/${data.name}/300`}
+							alt={data.name}
+						/> */}
 					</div>
 				</div>
 

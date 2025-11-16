@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Hey there!
 
-## Getting Started
+This is a Star Wars Agents. An Assingment Project created with [Next.js](https://nextjs.org) (a React Framework), Typescript and Tailwind CSS.
 
-First, run the development server:
+For, running it locally, paste the following command in terminal:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone --branch main --single-branch https://github.com/DeepakSRawat/star-wars-directory.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After Cloning completed, install module and run the project by following command:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm i
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Detail
 
-## Learn More
+this project using the [Star Wars API (SWAPI)](https://swapi.dev/) and for Image fetching i used [Picsum Photos](https://picsum.photos/) because i didn't find any star wars character image api 😁. may be in future i tried to do some jugad for that.
 
-To learn more about Next.js, take a look at the following resources:
+### Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   use server side component for fast load and optimization and image loader on client side.
+-   create a random static bg-color generator which using hash so that bg-color for every character is unique to them and for making photo statically unique to every character i use picsum photos seeding.
+-   create a client side search field for searching partiall character name.
+-   create a pagination at bottom which show total number of page based on current results with prev and next button and first and last button.
+-   make website responsive for mobile tab and pc screen size.
+-   handle error and redirect them to not found page.

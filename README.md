@@ -1,29 +1,39 @@
-Hey there!
+---
+## 💫 Project Overview
 
-This is a Star Wars Agents. An Assingment Project created with [Next.js](https://nextjs.org) (a React Framework), Typescript and Tailwind CSS.
+This project uses the [Star Wars API (SWAPI)](https://swapi.dev/) to fetch character data.
+For images, it utilizes [Picsum Photos](https://picsum.photos/) to generate unique placeholders, since SWAPI doesn’t provide character images (maybe some creative “jugad” for that in the future 😄).
+---
 
-For, running it locally, paste the following command in terminal:
+## 🌟 Features Implemented
 
-```bash
-git clone --branch main --single-branch https://github.com/DeepakSRawat/star-wars-directory.git
-```
+-   **Server and Client Components:**  
+    Server-side components ensure faster load times and better SEO, while client-side components handle dynamic behaviors like image loaders.
 
-After Cloning completed, install module and run the project by following command:
+-   **Unique Character Backgrounds:**  
+    A hash-based color generator assigns a consistent and unique background color to each character. Picsum’s seeded URLs ensure every character image remains consistently unique.
 
-```bash
-npm i
-npm run dev
-```
+-   **Character Search:**  
+    A client-side search input enables partial name matching to quickly find specific characters.
 
-## Project Detail
+-   **Pagination:**  
+    Fully functional pagination with first, last, previous, and next controls, displaying total page counts based on results.
 
-this project using the [Star Wars API (SWAPI)](https://swapi.dev/) and for Image fetching i used [Picsum Photos](https://picsum.photos/) because i didn't find any star wars character image api 😁. may be in future i tried to do some jugad for that.
+-   **Responsive Design:**  
+    Optimized layouts for mobile, tablet, and desktop screens.
 
-### Features
+-   **Error Handling:**  
+    Graceful handling of errors and redirects to a custom Not Found page.
 
--   use server side component for fast load and optimization and image loader on client side.
--   create a random static bg-color generator which using hash so that bg-color for every character is unique to them and for making photo statically unique to every character i use picsum photos seeding.
--   create a client side search field for searching partiall character name.
--   create a pagination at bottom which show total number of page based on current results with prev and next button and first and last button.
--   make website responsive for mobile tab and pc screen size.
--   handle error and redirect them to not found page.
+---
+
+## ⚙️ Design Choices & Trade-offs
+
+-   Decided to use server-side rendering for better performance and caching at scale.
+-   Used placeholder images to maintain visual consistency while API limitations exist.
+-   Chose Tailwind CSS for clean, responsive styling and faster UI iteration.
+-   Implemented pagination logic for clarity and better navigation.
+
+---
+
+Thanks for checking out this project! May the Force be with you ⚡

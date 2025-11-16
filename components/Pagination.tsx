@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
 export default function Pagination({
 	currentPage,
 	totalCount,
@@ -31,7 +29,7 @@ export default function Pagination({
 			<ul className="flex items-center flex-wrap justify-center gap-1 sm:gap-2 md:gap-3 bg-linear-to-r from-gray-700 to-gray-800 dark:from-gray-800 dark:to-gray-900 rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg">
 				{/* First Page */}
 				<li>
-					<Link href={`${BASE_URL}/?page=1`}>
+					<Link href={`/?page=1`}>
 						<div
 							className={`rounded-l-full rounded-r-sm px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === 1
@@ -51,12 +49,7 @@ export default function Pagination({
 				</li>
 				{/* Previous Page */}
 				<li>
-					<Link
-						href={`${BASE_URL}/?page=${Math.max(
-							1,
-							currentPage - 1
-						)}`}
-					>
+					<Link href={`/?page=${Math.max(1, currentPage - 1)}`}>
 						<div
 							className={`rounded px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === 1
@@ -77,7 +70,7 @@ export default function Pagination({
 				{/* Page Numbers */}
 				{pageNumbers.map((num) => (
 					<li key={num}>
-						<Link href={`${BASE_URL}/?page=${num}`}>
+						<Link href={`/?page=${num}`}>
 							<div
 								className={`px-2.5 sm:px-3.5 md:px-4 py-1 sm:py-2 rounded transition-smooth font-semibold text-sm sm:text-base ${
 									currentPage === num
@@ -93,10 +86,7 @@ export default function Pagination({
 				{/* Next Page */}
 				<li>
 					<Link
-						href={`${BASE_URL}/?page=${Math.min(
-							totalPages,
-							currentPage + 1
-						)}`}
+						href={`/?page=${Math.min(totalPages, currentPage + 1)}`}
 					>
 						<div
 							className={`rounded px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
@@ -117,7 +107,7 @@ export default function Pagination({
 				</li>
 				{/* Last Page */}
 				<li>
-					<Link href={`${BASE_URL}/?page=${totalPages}`}>
+					<Link href={`/?page=${totalPages}`}>
 						<div
 							className={`rounded-r-full rounded-l-sm px-2 sm:px-3 py-1 sm:py-2 transition-smooth flex items-center justify-center ${
 								currentPage === totalPages

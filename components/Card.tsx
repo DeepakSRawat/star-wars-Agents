@@ -19,7 +19,7 @@ const Card = async ({ id, name }: { id: number; name: string }) => {
 		<Link
 			href={`/${id}`}
 			className="card-base w-full max-w-xs sm:max-w-sm h-full flex flex-col group"
-			style={{ backgroundColor: bgColor }}
+			style={{ backgroundColor: `${bgColor}80` }}
 		>
 			<div className="relative overflow-hidden h-64 sm:h-72 md:h-80 w-full">
 				{/* <Image
@@ -40,7 +40,7 @@ const Card = async ({ id, name }: { id: number; name: string }) => {
 			<div className="p-4 sm:p-5 md:p-6 flex-grow flex flex-col justify-end">
 				<h5
 					className="text-xl sm:text-2xl md:text-3xl font-bold text-center line-clamp-2 transition-smooth"
-					style={{ color: accentLight }}
+					// style={{ color: accentLight }}
 				>
 					{name}
 				</h5>

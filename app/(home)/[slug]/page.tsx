@@ -18,8 +18,8 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 	const year = dateFormatter.getFullYear();
 
 	const gradientStyle = {
-		height: "100vh", // Full screen height
-		background: `linear-gradient(to bottom, #0a0a0a, ${bgcolor})`, // Top → Bottom
+		minHeight: "100vh", // Full screen height
+		background: `linear-gradient(to bottom, transparent, ${bgcolor})`, // Top → Bottom
 	};
 
 	return (
@@ -59,48 +59,48 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 				{/* Character Details */}
 				<div className="md:col-span-2 space-y-6">
 					{/* Personal Stats */}
-					<div className="bg-white bg-opacity-95 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-bold mb-4 text-gray-800">
+					<div className="bg-black/50 backdrop-blur-sm bg-opacity-95 rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-bold mb-4 text-yellow-400">
 							Character Stats
 						</h2>
 						<div className="grid grid-cols-2 gap-4 sm:gap-6">
 							<div className="border-l-4 border-blue-500 pl-4">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Height
 								</p>
-								<p className="text-xl font-bold text-gray-900">
+								<p className="text-xl font-bold text-red-400">
 									{data.height}
 								</p>
 							</div>
 							<div className="border-l-4 border-green-500 pl-4">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Mass
 								</p>
-								<p className="text-xl font-bold text-gray-900">
+								<p className="text-xl font-bold text-red-400">
 									{data.mass}
 								</p>
 							</div>
 							<div className="border-l-4 border-purple-500 pl-4">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Birth Year
 								</p>
-								<p className="text-xl font-bold text-gray-900">
+								<p className="text-xl font-bold text-red-400">
 									{data.birth_year}
 								</p>
 							</div>
 							<div className="border-l-4 border-orange-500 pl-4">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Films
 								</p>
-								<p className="text-xl font-bold text-gray-900">
+								<p className="text-xl font-bold text-red-400">
 									{data.films.length}
 								</p>
 							</div>
 							<div className="col-span-2 border-l-4 border-pink-500 pl-4">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Created
 								</p>
-								<p className="text-xl font-bold text-gray-900">
+								<p className="text-xl font-bold text-red-400">
 									{day}/{month + 1}/{year}
 								</p>
 							</div>
@@ -108,40 +108,40 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 					</div>
 
 					{/* HomeWorld Details */}
-					<div className="bg-white bg-opacity-95 rounded-lg shadow-lg p-6">
-						<h2 className="text-2xl font-bold mb-4 text-gray-800">
+					<div className="bg-black/50 backdrop-blur-sm bg-opacity-95 rounded-lg shadow-lg p-6">
+						<h2 className="text-2xl font-bold mb-4 text-yellow-400">
 							Home World
 						</h2>
 						<div className="space-y-4">
 							<div className="border-b-2 border-gray-200 pb-3">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Planet Name
 								</p>
-								<p className="text-lg font-bold text-gray-900">
+								<p className="text-lg font-bold text-red-400">
 									{HomeWorldData.name}
 								</p>
 							</div>
 							<div className="border-b-2 border-gray-200 pb-3">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Terrain
 								</p>
-								<p className="text-lg font-bold text-gray-900">
+								<p className="text-lg font-bold text-red-400">
 									{HomeWorldData.terrain}
 								</p>
 							</div>
 							<div className="border-b-2 border-gray-200 pb-3">
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Climate
 								</p>
-								<p className="text-lg font-bold text-gray-900">
+								<p className="text-lg font-bold text-red-400">
 									{HomeWorldData.climate}
 								</p>
 							</div>
 							<div>
-								<p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+								<p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
 									Population
 								</p>
-								<p className="text-lg font-bold text-gray-900">
+								<p className="text-lg font-bold text-red-400">
 									{HomeWorldData.population}
 								</p>
 							</div>

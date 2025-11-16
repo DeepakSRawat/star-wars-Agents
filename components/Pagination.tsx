@@ -25,8 +25,8 @@ export default function Pagination({
 	}
 
 	return (
-		<nav className="flex justify-center my-6 sm:my-8 md:my-10 mx-2 sm:mx-4 md:mx-6 px-3 sm:px-4">
-			<ul className="flex items-center flex-wrap justify-center gap-1 sm:gap-2 md:gap-3 bg-linear-to-r from-gray-700 to-gray-800 dark:from-gray-800 dark:to-gray-900 rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg">
+		<nav className="flex justify-center py-6 sm:my-8 md:my-10 mx-2 sm:mx-4 md:mx-6 sm:px-4">
+			<ul className="flex items-center flex-wrap justify-center gap-0.5 sm:gap-2 md:gap-3 bg-linear-to-r from-gray-700 to-gray-800 dark:from-gray-800 dark:to-gray-900 rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg">
 				{/* First Page */}
 				<li>
 					<Link href={`/?page=1`}>

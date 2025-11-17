@@ -12,11 +12,12 @@ export default function NotFound() {
 				width={500}
 				height={500}
 				alt="Not Found"
+				className="rounded-2xl my-2 opacity-90"
 			/>
 
 			<a
 				href="/"
-				className="border rounded-2xl p-2 hover:cursor-pointer hover:bg-yellow-400 hover:text-black hover:border-black text-yellow-400"
+				className="border backdrop-blur-sm rounded-2xl p-2 hover:cursor-pointer hover:bg-yellow-400 hover:text-black hover:border-black text-yellow-400"
 			>
 				Return Home
 			</a>

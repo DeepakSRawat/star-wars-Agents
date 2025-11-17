@@ -1,7 +1,6 @@
 import { PICSUM_BASE_URL } from "@/lib/constants";
 import { lighten, stringToColor } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import Loader from "./Loader";
 import ImageCard from "./ImageCard";
 
@@ -10,15 +9,21 @@ const imageLoader = () => {
 	return <Loader />;
 };
 
-const Card = async ({ id, name }: { id: number; name: string }) => {
+interface CardProps {
+	id: number;
+	name: string;
+	onClick: () => void;
+}
+
+const Card = ({ id, name, onClick }: CardProps) => {
 	const bgColor = stringToColor(name);
 	const accentLight = lighten(bgColor, 40);
 	// const accentDark = darken(bgColor, 40);
 	// const accentVibrant = saturate(bgColor, 0.5);
 	return (
-		<Link
-			href={`/${id}`}
-			className="card-base w-full max-w-xs sm:max-w-sm h-full flex flex-col group"
+		<button
+			onClick={onClick}
+			className="card-base w-full max-w-xs sm:max-w-sm h-full flex flex-col group cursor-pointer border-none bg-transparent text-left"
 			style={{ backgroundColor: `${bgColor}80` }}
 		>
 			<div className="relative overflow-hidden h-64 sm:h-72 md:h-80 w-full">
@@ -37,7 +42,7 @@ const Card = async ({ id, name }: { id: number; name: string }) => {
 					alt={name}
 				/>
 			</div>
-			<div className="p-4 sm:p-5 md:p-6 flex-grow flex flex-col justify-end">
+			<div className="p-4 sm:p-5 md:p-6 grow flex flex-col justify-end">
 				<h5
 					className="text-xl sm:text-2xl md:text-3xl font-bold text-center line-clamp-2 transition-smooth"
 					// style={{ color: accentLight }}
@@ -45,7 +50,7 @@ const Card = async ({ id, name }: { id: number; name: string }) => {
 					{name}
 				</h5>
 			</div>
-		</Link>
+		</button>
 	);
 };
 

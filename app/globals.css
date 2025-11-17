@@ -53,6 +53,37 @@
   }
 }
 
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-expand {
+  animation: smooth-scale 0.3s ease-out forwards;
+  /* 'forwards' ensures it stays at the end state (scale(1)) */
+
+  /* Optionally add initial state here in case the animation doesn't run */
+  transform: scale(0.25);
+}
+
+@keyframes smooth-scale {
+  0% {
+    transform: scale(0.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 .shimmer {
   background: linear-gradient(90deg,
       #e2e2e2 25%,
@@ -69,5 +100,21 @@
 
   100% {
     background-position: -200% 0;
+  }
+}
+
+@layer utilities {
+
+  /* Chrome, Safari, Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* IE, Edge, Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }

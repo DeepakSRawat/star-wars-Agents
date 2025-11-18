@@ -30,7 +30,7 @@ const ImageCard = ({
 			<Image
 				{...props}
 				src={src} // Use the actual image source prop
-				onLoadingComplete={() => setIsLoading(false)}
+				onLoad={() => setIsLoading(false)}
 			/>
 		</>
 	);

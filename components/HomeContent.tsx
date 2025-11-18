@@ -20,12 +20,14 @@ interface HomeContentProps {
 	results: Character[];
 	count: number;
 	currentPage: number;
+	search: string | undefined;
 }
 
 export default function HomeContent({
 	results,
 	count,
 	currentPage,
+	search,
 }: HomeContentProps) {
 	const [selectedCharacter, setSelectedCharacter] =
 		useState<Character | null>(null);
@@ -65,7 +67,11 @@ export default function HomeContent({
 			</div>
 
 			<div className="mt-auto">
-				<Pagination currentPage={currentPage} totalCount={count} />
+				<Pagination
+					currentPage={currentPage}
+					totalCount={count}
+					search={search}
+				/>
 			</div>
 
 			{/* Character Details Modal */}

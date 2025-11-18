@@ -1,5 +1,3 @@
-import Card from "@/components/Card";
-import Pagination from "@/components/Pagination";
 import { SWAPI_BASE_URL } from "@/lib/constants";
 import NotFound from "./(no-header)/not-found";
 import HomeContent from "@/components/HomeContent";
@@ -23,7 +21,9 @@ async function fetchCharacters(page: number, search?: string) {
 	try {
 		let url: string;
 
-		if (search) {
+		if (search && page) {
+			url = `${SWAPI_BASE_URL}/people/?search=${search}&page=${page}`;
+		} else if (search) {
 			url = `${SWAPI_BASE_URL}/people/?search=${search}`;
 		} else {
 			url = `${SWAPI_BASE_URL}/people/?page=${page}`;
@@ -64,5 +64,12 @@ export default async function Home({ searchParams }: HomePageProps) {
 		return <NotFound />;
 	}
 
-	return <HomeContent results={results} count={count} currentPage={page} />;
+	return (
+		<HomeContent
+			results={results}
+			count={count}
+			currentPage={page}
+			search={search}
+		/>
+	);
 }
